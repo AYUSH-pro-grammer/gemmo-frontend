@@ -1,0 +1,48 @@
+.box{
+    position: fixed;
+
+    top: 0px;
+    left: 0px;
+
+    width: 100vw;
+    height: 100vh;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+
+
+
+
+
+    background-color: white;
+}
+
+.page{
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+    border: 1px solid black;
+
+
+    overflow-y: scroll;
+
+}
+
+
+.open{
+
+    opacity: 1;
+    scale: 1;
+    transition: all 3s ease;
+
+}
+
+.close{
+    opacity: 0;
+    scale: 0;
+    transition: all 3s ease;
+}
