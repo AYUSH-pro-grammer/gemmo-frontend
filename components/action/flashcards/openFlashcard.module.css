@@ -1,0 +1,22 @@
+.box{
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    background-color: white;
+}
+
+.open{
+    scale: 1;
+
+    transition: all 0.3s ease;
+}
+
+.close{
+    scale: 0;
+    transition: all 0.3s ease;
+
+}
