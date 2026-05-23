@@ -1,0 +1,13 @@
+.actionViewbOX{
+    display: flex;
+    border: 1px solid black;
+    gap: 12px;
+}
+
+.actionViewbOX:hover{
+    scale: 1.05;
+}
+
+.actionViewbOX h4{
+    font-weight: 400;
+}

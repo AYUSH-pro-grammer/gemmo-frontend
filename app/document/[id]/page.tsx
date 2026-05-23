@@ -3,6 +3,7 @@ import styles from "./document.module.css"
 import { useParams } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import Source from "@/components/source/Source"
 
 import Action from "@/components/action/Action"
 
@@ -88,11 +89,15 @@ export default function DocumentPage(){
         <div className={styles.gridpage}>
 
             <aside className={ contentActive ? (styles.source):(styles.sourceCollapse)}>
-                Source
+               <Source id={id}/> 
                 <button
                 onClick={()=>{setContentActive(!contentActive)}}
                 
                 > Collapse </button>
+
+
+
+
 
 
             </aside>

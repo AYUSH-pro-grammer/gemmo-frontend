@@ -22,6 +22,7 @@ export default function OpenFlashCard({data, onClose}: propsData){
 
     const [open, setOpen] = useState(false)
 
+
     useEffect(() => {
         setOpen(true)
     }, [])
