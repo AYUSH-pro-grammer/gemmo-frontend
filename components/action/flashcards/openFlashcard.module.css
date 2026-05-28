@@ -6,9 +6,26 @@
     top: 0px;
     left: 0px;
 
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    background-color: #eeeffa;
 }
 
+
+.boxybox{
+    background-color: white;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+}
 .open{
     scale: 1;
 
@@ -19,4 +36,88 @@
     scale: 0;
     transition: all 0.3s ease;
 
+}
+
+.headers{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0px;
+
+}
+
+.headers h4{
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0px;
+}
+
+.closeButton{
+    padding: 6px 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.boxFlashcard{
+
+
+    display: flex;
+    justify-content: center;
+
+
+    margin: 32px 0px;
+    margin-bottom: 16px;
+
+    flex-direction: column;
+
+
+
+}
+
+.boxFlashcard h4{
+    font-weight: 400;
+}
+
+.bigBox{
+    background-color: #303030;
+    color: white;
+    width: 500px;
+    height: 500px;
+
+    font-size: 64px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 24px;
+
+
+}
+
+.buttonsForn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 0px;
+
+}
+
+
+.buttonsForn button{
+    padding: 8px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0);
+
+    transition: all 0.3s ease;
+}
+
+.buttonsForn button:hover{
+
+    border: 1px solid rgba(0,0,0,1);
 }

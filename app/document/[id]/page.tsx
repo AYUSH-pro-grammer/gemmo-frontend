@@ -7,6 +7,10 @@ import Source from "@/components/source/Source"
 
 import Action from "@/components/action/Action"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCompress } from "@fortawesome/free-solid-svg-icons"
+
+
 
 import { useEffect, useState
 
@@ -14,17 +18,23 @@ import { useEffect, useState
 
  } from "react"
 
+type DocumentType = { title: string, content: string }
 
 
-
+ 
 export default function DocumentPage(){
-    const {id} = useParams()
+    const params = useParams()
+    const id = Number(params.id)
+
+    const [content, setContent] = useState<DocumentType>({
+    title: "",
+    content: ""
+})
 
 
     const [contentActive, setContentActive] = useState(true)
     const [actionActive, setActionActive] = useState(true)
     const [loading, setLoading] = useState(true)
-    const [content, setContent] = useState("")
     const [sending, setSending] = useState(false)
 
     const [chat, setChat] = useState("")
@@ -32,9 +42,7 @@ export default function DocumentPage(){
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/docuemnt/document/${id}`
 
 
-    useEffect(()=>{
-
-        const fetchData = async() => {
+  const fetchData = async() => {
 
             const resp = await fetch(url,{
                 method: "GET",
@@ -49,6 +57,10 @@ export default function DocumentPage(){
 
             setContent(data)
         }
+
+    useEffect(()=>{
+
+      
 
         try{
             fetchData()
@@ -79,8 +91,9 @@ export default function DocumentPage(){
         console.log(resp)
         const data = await resp.json()
         console.log(data)
-
         setSending(false)
+
+        fetchData();
     }
   
 
@@ -89,15 +102,25 @@ export default function DocumentPage(){
         <div className={styles.gridpage}>
 
             <aside className={ contentActive ? (styles.source):(styles.sourceCollapse)}>
-               <Source id={id}/> 
-                <button
-                onClick={()=>{setContentActive(!contentActive)}}
-                
-                > Collapse </button>
+
+                        
+                        
 
 
+                <div className={styles.headerAction}>
 
 
+                <h4>                    {
+                        contentActive ? "Source" : null
+                    }
+                    </h4>
+                 <button className={styles.buttonCollapse}  onClick={()=>{setContentActive(!contentActive)}}> 
+                    <FontAwesomeIcon icon={faCompress} />
+                 </button>
+                </div>
+      
+               <Source id={id} state={contentActive}/> 
+        
 
 
             </aside>
@@ -112,7 +135,7 @@ export default function DocumentPage(){
                         <div className={styles.contentHolder}>
 
                             <h4>
-                                {content["title"]}
+                                {content?.title}
                             </h4>
 
                             <ReactMarkdown
@@ -125,13 +148,20 @@ export default function DocumentPage(){
 
                             </ReactMarkdown>
 
-                            <br /><br />
+
 
                             <form action="" className={styles.chatFormBox} onSubmit={(e:any) => askai(e)}>
-                                <input type="text" placeholder="chat"  onChange={(e)=>{setChat(e.target.value)}}/>
-                                <button>{
-                                    sending ? "sending" : "send"
-}</button>
+
+                                <div className={styles.inputMainCont}>
+                                <input type="text" placeholder="chat" className={styles.inputbox}  onChange={(e)=>{setChat(e.target.value)}}/>
+                                <button
+                                className={styles.sendingButotn}
+                                >{
+                                    sending ? "Thinking..." : "Ask"
+                                }</button>
+
+                                </div>
+
                             </form>
                             
                             
@@ -145,14 +175,18 @@ export default function DocumentPage(){
 
 
             <aside className={actionActive ? (styles.action):(styles.actionCollapse)}>
+
+
+                <div className={styles.headerAction}>
+                <h4>Studio</h4>
+                 <button className={styles.buttonCollapse}  onClick={()=>{setActionActive(!actionActive)}}> 
+                    <FontAwesomeIcon icon={faCompress} />
+                 </button>
+                </div>
+
+
                 <Action id={id}/>
-                <button
-                onClick={()=>{setActionActive(!actionActive)}}
-
-
-                
-                > Collapse </button>
-
+               
 
             </aside>
 

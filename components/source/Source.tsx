@@ -3,15 +3,27 @@ import { useEffect, useState } from "react"
 import styles from "./source.module.css"
 import { title } from "process"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faYoutube } from "@fortawesome/free-brands-svg-icons"
+import youtube from "@/public/icon/youtube.png"
+import Image from "next/image"
 
 
 type IdProps = {
     id: number
+    state: boolean
+}
+
+type DetailDataType = {
+    title: string
+    data: string
 }
 
 
 
-export default function Source({id}: IdProps){
+
+
+export default function Source({id, state}: IdProps){
 
     const [loading, setLoading] = useState(false)
     const [source, setSource] = useState([])
@@ -24,7 +36,11 @@ export default function Source({id}: IdProps){
 
 
     const [is_detail_open, set_detail_open] = useState(false)
-    const [detail_data, set_detail_data] = useState({})
+    
+const [detail_data, set_detail_data] = useState<DetailDataType>({
+    title: "",
+    data: ""
+})
 
     const fetchSource = async() => {
 
@@ -96,9 +112,28 @@ export default function Source({id}: IdProps){
 
 
             <section>
-                <button onClick={() => {
+
+
+
+
+
+
+
+                    <button 
+
+                    className={styles.buttonCreateSource}
+                    
+                    onClick={() => {
+                        
                     set_add_source_pop(!add_source_pop)
-                }}>Add Source</button>
+                }}>{state ? "Add Source": "+"}</button>
+
+
+
+<br /><br /><br />
+                {state ? "Existed Sources:":null}
+                
+                
 
                 { add_source_pop &&
 
@@ -132,12 +167,19 @@ export default function Source({id}: IdProps){
 
 
 
-            <section>
+            <section className={styles.mainCont}>
                 {
                     source.map((item: any) => {
                         return (
-                            <div onClick={()=>{
+                            <div 
+
+                            className={styles.boxForSources}
+
+                            
+                            
+                            onClick={()=>{
                                 set_detail_open(true);
+
                                 const dataList = {
                                     "title": item.title,
                                     "data": item.url,
@@ -145,7 +187,13 @@ export default function Source({id}: IdProps){
 
                                 set_detail_data(dataList)
                             }}>
-                                <h4>{item.title}</h4>                               
+                                <Image src={youtube} alt="yt" width={20} height={20}>
+                                </Image>
+
+                {
+                    state ? (<h4>{item.title}</h4>) : null 
+                }
+                                                    
                             </div>
                         )
                     })

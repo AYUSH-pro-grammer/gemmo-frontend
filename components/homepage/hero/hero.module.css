@@ -1,0 +1,74 @@
+.mainPage{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.insidePage{
+
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: max-content;
+}
+
+.firstSection{
+
+    padding: 30px;
+}
+.firstSection h1{
+    font-size: 48px;
+    font-weight: 400;
+    
+
+}
+
+.firstSection p{
+    font-size: 16px;
+}
+
+
+.buttonHere{
+    display: flex;
+    gap: 12px;
+}
+.buttonHere button{
+    padding: 12px 32px;
+
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+
+.buttonHere button:hover{
+    padding-right: 64px;
+}
+
+
+.loginBtn{
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0,0,0,1);
+    cursor: pointer;
+
+}
+
+.loginBtn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+.get_started{
+    background-color: black;
+    color: white;
+
+    border: 1px solid black;
+    cursor: pointer;
+}

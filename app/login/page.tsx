@@ -47,8 +47,26 @@ export default function LoginPage(){
 
 
     return(
-        <div>
-            <form action={submitForm}>
+
+        <>
+
+
+        <div 
+        className={styles.Navbar}>
+            <h2>Gemmo</h2>
+        </div>
+
+        <br /><br /><br />
+        <br /><br /><br />
+
+          <div className={styles.mainBoxCont}>
+            <form action={submitForm} className={styles.formCotn}>
+
+                <h1>Welcome Back 👋</h1>
+                <p>Please login to access your account</p>
+
+                <br /><br />
+
                 <label htmlFor="">Email</label>
                 <input onChange={(e) => {setEmail(e.target.value)}} type="text" placeholder="user@example.com" />
 
@@ -57,8 +75,12 @@ export default function LoginPage(){
                 <input onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="password" />
 
                 <br />
-                <button>Submit</button>
+
+                <p>No account ? <a href="/signup">Signup</a></p>
+                <button className={styles.loginButton}>Login</button>
             </form>
         </div>
+        </>
+      
     )
 }

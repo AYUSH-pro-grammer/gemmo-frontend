@@ -1,13 +1,82 @@
 .actionViewbOX{
     display: flex;
-    border: 1px solid black;
     gap: 12px;
 }
 
 .actionViewbOX:hover{
-    scale: 1.05;
+
 }
 
 .actionViewbOX h4{
     font-weight: 400;
+}
+
+.buttonCreateCont{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.buttonCreate{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: #FAEEEC;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+.buttonCreate:hover{
+    scale: 1.05;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.buttonCreatetwo{
+    background-color: #DDF3E4;
+        width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+        transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+.buttonCreatetwo:hover{
+    scale: 1.05;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.actionCont{
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.actionViewbOX{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 0px 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 12px;
+
+}
+
+
+.actionViewbOX h4{
+    padding: 0px;
+    margin: 12px;
+}
+
+
+.actionViewbOX:hover{
+    background-color: rgba(0,0,0,0.04)
 }

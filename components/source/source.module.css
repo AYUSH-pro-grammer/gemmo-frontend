@@ -54,3 +54,72 @@ background-color: rgba(0,0,0,0.3);
 background-color: white;
     padding: 12px;
 }
+
+.sorceCont{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonCreateSource{
+    width: 100%;
+    margin: 12px 0px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.3);
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.buttonCreateSource:hover{
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+
+.mainCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: 12px;
+
+    margin-top: 24px;
+
+}
+
+
+.boxForSources{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid rgba(0,0,0,0);
+    padding: 12px;
+    width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    justify-content: center;
+
+
+}
+
+.boxForSources:hover{
+    background-color: rgba(0,0,0,0.1);
+
+}
+
+.boxForSources h4{
+    font-weight: 400;
+    margin: 0px;
+
+      white-space: nowrap;      /* 1. Prevents the text from wrapping to a second line */
+  overflow: hidden;         /* 2. Hides the part of the text that extends beyond the container */
+  text-overflow: ellipsis;  /* 3. Adds the "..." to signal there is more text */
+  width: 200px;         
+
+}
+
+.none{
+    display: none;
+}

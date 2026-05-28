@@ -1,15 +1,29 @@
 "use client"
 import styles from "./dashboard.module.css"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Navbar from "@/components/navbar/Page"
+
+import staticFolder from "@/public/icon/staticFolder.png"
+import animatedFolder from "@/public/icon/gitFolder.gif"
+import Image from "next/image"
+import Link from "next/link"
+
+import { useRouter } from "next/navigation"
+
 
 
 export default function Dashboard(){
+    const router = useRouter()
 
     const [user, setUser] = useState(true)
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState([])
     const [isOpen, setOpen] = useState(false)
+
+    const [menuOpenId, setMenuOpenid] = useState(null)
+
+
+
 
     const [title, setTitle] = useState("")
 
@@ -103,16 +117,31 @@ export default function Dashboard(){
 
 <section className={styles.boxybox}> 
 
-    
+    <section className={styles.createNew}>
 
- <button className={styles.box} onClick={()=>{setOpen(true)}}>
-                <p>Add</p>
+        <h2 >My Notebooks</h2>
+
+         <button className={styles.addbutton} onClick={()=>{setOpen(true)}}>
+                    Create New Notebook
             </button>
 
 
 {
     isOpen ? (
-        <div className={styles.popupbox}>
+
+        <div className={styles.popCont}
+
+        onClick={
+            ()=>{setOpen(false)}
+        }
+        
+        >
+
+   <div className={styles.popupbox} 
+
+   onClick={(e)=>{e.stopPropagation()}}
+   
+   >
 
     <button onClick={()=>{setOpen(false)}}>Close</button>
 
@@ -126,30 +155,137 @@ export default function Dashboard(){
     </form>
 
 </div>
-    ):(
-        <></>
-    )
+
+        </div>
+     
+    ):null
 }
     
 
+    </section>
 
-{
-    data.map((item:any) => {
+    
+
+
+
+<div>
+
+</div>
+
+
+
+<section className={styles.boxCont}>
+
+
+
+    <table className={styles.table}>
+
+        <thead>
+        <tr>
+            <td>Sno.</td>
+            <td>Title</td>
+            <td>Source</td>
+            <td>Created</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+
+
+<tbody>
+
+
+
+    {
+    data.map((item:any, index) => {
 
         return(
 
-            <a href={`./document/${item.id}`}>
-                <div className={styles.box}>
-                <h4>{item.title}</h4>
-                <p>{item.date || "12 April 2026"}</p>
-                <p>{item.source || "1"} Source</p>
-            </div>
-            </a>
+            <tr key={item.id} className={styles.trData}
+
+            onClick={()=>{
+                router.push(`/document/${item.id}`)
+            }}
+            
+            
+            >
+
+                <td>{index+1}</td>
+
+
+                <td className={styles.title}>
+                    {item.title}</td>
+
+                <td>{item.source || "1 Source"}</td>
+
+                <td>{item.data || "12 April 2025"}</td>
+
+                <td>
+                        <button
+                onClick={(e) => {
+                    e.stopPropagation()
+
+
+                    if (menuOpenId === item.id) {
+                        setMenuOpenid(null)
+                    } else {
+                        setMenuOpenid(item.id)
+                    }
+                }}
+                className={styles.detailButton}
+                
+                >
+
+
+                    Detail
+                </button>
+
+                      {
+                    menuOpenId === item.id && (
+                        <div className={styles.menu}>
+
+                            <button
+                            onClick={()=>{alert(`edit ${item.id}`)}}>Edit</button>
+
+                        <button
+                            onClick={()=>{alert(`delete ${item.id}`)}}>Delete</button>
+                        
+                        </div>
+                    )
+                }
+
+                </td>
+
+            
+          
+            </tr>
+                    
+            
+
             
         )
 
     })
 }
+
+
+</tbody>
+
+
+
+
+
+
+
+
+
+
+    </table>
+
+
+
+</section>
+
+
 
 
 

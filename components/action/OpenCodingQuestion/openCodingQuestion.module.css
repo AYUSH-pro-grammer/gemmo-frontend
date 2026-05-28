@@ -1,0 +1,325 @@
+.box{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.open{
+    opacity: 1;
+    scale: 1;
+    transition: all 0.25s ease;
+}
+
+.close{
+    opacity: 0;
+    scale: 0.96;
+    transition: all 0.25s ease;
+}
+
+.mainBox{
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    padding: 18px 24px;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2{
+    margin: 0px;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.metaData{
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.metaData span{
+    background-color: #f4f4f4;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.closeButton{
+    border: none;
+    background-color: #f4f4f4;
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.contentLayout{
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.leftSide{
+    width: 50%;
+    overflow-y: auto;
+    padding: 24px;
+    box-sizing: border-box;
+    border-right: 1px solid #ececec;
+}
+
+.rightSide{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.sectionBox{
+    margin-bottom: 28px;
+}
+
+.sectionBox h3{
+    margin: 0px 0px 10px 0px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sectionBox p{
+    margin: 0px;
+    line-height: 1.8;
+    color: #444;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: pre-wrap;
+}
+
+.exampleBox{
+    background-color: #fafafa;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.exampleBox h4{
+    margin: 0px 0px 18px 0px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.ioBox{
+    margin-bottom: 14px;
+}
+
+.ioBox span{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ioBox pre{
+    background-color: white;
+    padding: 14px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 0px;
+    font-size: 14px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.editorHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 12px;
+}
+
+.editorHeaderLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.editorHeader h3{
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.languageSelect{
+    border: 1px solid #e5e5e5;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    min-width: 210px;
+}
+
+.actionButtons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.runButton,
+.submitButton{
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.runButton{
+    background-color: #171717;
+}
+
+.submitButton{
+    background-color: #3b3b3b;
+}
+
+.runButton:disabled,
+.submitButton:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.runButton:hover,
+.submitButton:hover{
+    transform: translateY(-1px);
+}
+
+.examplePickerRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.examplePickerLabel{
+    font-size: 14px;
+    font-weight: 400;
+    color: #444;
+}
+
+.exampleSelect{
+    border: 1px solid #e5e5e5;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    outline: none;
+    min-width: 160px;
+}
+
+.inputBoxWrap{
+    margin-bottom: 14px;
+    background-color: #fafafa;
+    border-radius: 16px;
+    padding: 14px;
+}
+
+.inputBoxHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.inputBoxHeader h4{
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.inputBoxHeader span{
+    font-size: 13px;
+    font-weight: 400;
+    color: #666;
+}
+
+.inputBox{
+    width: 100%;
+    min-height: 92px;
+    resize: vertical;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 14px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: monospace;
+    line-height: 1.7;
+    background-color: white;
+}
+
+.editor{
+    flex: 1;
+    resize: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 18px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: monospace;
+    line-height: 1.7;
+    min-height: 300px;
+}
+
+.outputBox{
+    margin-top: 18px;
+    background-color: #fafafa;
+    border-radius: 16px;
+    padding: 16px;
+    min-height: 140px;
+    overflow: auto;
+}
+
+.outputBox h4{
+    margin: 0px 0px 12px 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.outputBox pre{
+    margin: 0px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    font-family: monospace;
+    line-height: 1.6;
+}

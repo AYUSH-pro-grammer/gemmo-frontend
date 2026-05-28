@@ -19,13 +19,13 @@
 
 
 
-    background-color: white;
+    background-color: #eeeffa;
 }
 
 .page{
+    background-color: white;
     height: calc(100% - 30px);
     width: calc(100% - 30px);
-    border: 1px solid black;
 
 
     overflow-y: scroll;
@@ -45,4 +45,94 @@
     opacity: 0;
     scale: 0;
     transition: all 3s ease;
+}
+
+.headers{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.headers button{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+
+.questionCont{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 64px 0px;
+    flex-direction: column;
+}
+
+.optionsCont{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 12px;
+    width: 800px;
+
+
+}
+
+.optionsCont li{
+    background-color: #F9F9F9;
+    border-radius: 12px;
+    padding: 12px 24px;
+    border: 1px solid rgba(0,0,0,0);
+    transition: all 0.3s ease;
+}
+
+
+.optionsCont li:hover{
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.buttonComts{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+
+    margin: 24px 0px;
+
+}
+
+.buttonComts button{
+    padding: 8px 16px;
+}
+
+.btnPrev{
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.nextBtn{
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: #4259ff;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+
+
+
+
 }
