@@ -14,13 +14,6 @@ type IdProps = {
     state: boolean
 }
 
-type DetailDataType = {
-    title: string
-    data: string
-}
-
-
-
 
 
 export default function Source({id, state}: IdProps){
@@ -36,11 +29,7 @@ export default function Source({id, state}: IdProps){
 
 
     const [is_detail_open, set_detail_open] = useState(false)
-    
-const [detail_data, set_detail_data] = useState<DetailDataType>({
-    title: "",
-    data: ""
-})
+    const [detail_data, set_detail_data] = useState({})
 
     const fetchSource = async() => {
 
@@ -174,9 +163,7 @@ const [detail_data, set_detail_data] = useState<DetailDataType>({
                             <div 
 
                             className={styles.boxForSources}
-
-                            
-                            
+                            key={item.id}
                             onClick={()=>{
                                 set_detail_open(true);
 

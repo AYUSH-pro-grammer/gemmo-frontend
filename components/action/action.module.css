@@ -1,7 +1,9 @@
 .actionViewbOX{
     display: flex;
     gap: 12px;
+
 }
+
 
 .actionViewbOX:hover{
 
@@ -16,6 +18,7 @@
     flex-direction: column;
     gap: 12px;
     padding: 12px;
+
 }
 
 .buttonCreate{
@@ -47,10 +50,48 @@
     cursor: pointer;
 }
 
+.buttonCreateFOUR{
+
+    background-color: #eeeffa ;
+        width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+        transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+
+.buttonCreateFOUR:hover{
+    scale: 1.05;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
 .buttonCreatetwo:hover{
     scale: 1.05;
     border: 1px solid rgba(0,0,0,0.1);
 }
+
+.buttonCreateThree{
+    background-color: #def1f6;
+        width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+        transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+.buttonCreateThree:hover{
+    scale: 1.05;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+
 
 .actionCont{
     padding: 12px;
@@ -79,4 +120,146 @@
 
 .actionViewbOX:hover{
     background-color: rgba(0,0,0,0.04)
+}
+
+.popupReport{
+    width: 100%;
+    height: 100%;
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formReport{
+
+    background-color: white;
+    padding: 32px;
+    border-radius: 24px;
+
+
+}
+
+.headerReport{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.formatName{
+    font-weight: 400;
+}
+
+.headerReport h2{
+    font-weight: 400;
+    font-size: 24px;
+}
+.headerReport button{
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.headerReport button:hover{
+    transform: rotate(90deg);
+
+}
+
+.formatSection{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+}
+
+.formatSection div{
+    border-radius: 12px;
+    background-color: #f2f2e7;
+    padding: 24px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    transition: all 0.3s ease;
+}
+
+.formatSection div:hover{
+
+    transform: ;
+
+}
+
+.formatSection div h4{
+    margin: 0px;
+    font-weight: 400;
+
+}
+
+
+.formatSection div p{
+    margin: 0px;
+    font-size: 14px;
+    
+}
+
+.reportForm{
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.reportForm textarea{
+    padding: 12px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(0,0,0,0.3);
+
+    line-height: 22px;
+
+    font-size: 16px;
+
+}
+
+.repertfORMbACK{
+    width: 40px;
+    height: 40px;
+
+    border-radius: 999px;
+    border: none;
+
+    font-size: 24px;
+    cursor: pointer;
+
+
+}
+
+.createReport{
+    padding: 12px;
+    border: none;
+
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+
+    cursor: pointer;
+}
+
+.notmorethanline{
+      white-space: nowrap;    /* Prevents the text from wrapping to a new line */
+  overflow: hidden;       /* Hides any text that extends beyond the container */
+  text-overflow: ellipsis;
+  width: 200px;
 }

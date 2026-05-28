@@ -41,6 +41,9 @@
     width: 500px;
     transition: all 0.3s ease;
 
+
+    overflow-y: scroll;
+
 }
 .actionCollapse{
     width: 100px;
@@ -142,6 +145,7 @@
     padding: 12px;
     background-color: white;
     border-bottom: 1px solid rgba(0,0,0,0.4);
+
 
 
 }

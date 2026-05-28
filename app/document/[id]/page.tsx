@@ -18,23 +18,17 @@ import { useEffect, useState
 
  } from "react"
 
-type DocumentType = { title: string, content: string }
 
 
- 
+
 export default function DocumentPage(){
-    const params = useParams()
-    const id = Number(params.id)
-
-    const [content, setContent] = useState<DocumentType>({
-    title: "",
-    content: ""
-})
+    const {id} = useParams()
 
 
     const [contentActive, setContentActive] = useState(true)
     const [actionActive, setActionActive] = useState(true)
     const [loading, setLoading] = useState(true)
+    const [content, setContent] = useState("")
     const [sending, setSending] = useState(false)
 
     const [chat, setChat] = useState("")
@@ -135,7 +129,7 @@ export default function DocumentPage(){
                         <div className={styles.contentHolder}>
 
                             <h4>
-                                {content?.title}
+                                {content["title"]}
                             </h4>
 
                             <ReactMarkdown
@@ -175,7 +169,6 @@ export default function DocumentPage(){
 
 
             <aside className={actionActive ? (styles.action):(styles.actionCollapse)}>
-
 
                 <div className={styles.headerAction}>
                 <h4>Studio</h4>
